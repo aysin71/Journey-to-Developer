@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="jUU-dD-ref">
             <objects>
-                <viewController id="PTk-8j-WVb" customClass="ViewController" customModule="meme4ever" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PTk-8j-WVb" customClass="ViewController" customModule="belikeMeme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dOs-79-e4P"/>
                         <viewControllerLayoutGuide type="bottom" id="RC7-RP-fJJ"/>
