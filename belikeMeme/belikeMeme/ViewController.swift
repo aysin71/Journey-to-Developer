@@ -29,6 +29,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        thisIsXText.text = "This is Bill"
+        wiseText.text = "add your text here. Click on any text to change it."
+        beText.text = "Be Smart"
+        beLikeXText.text = "Be like Bill"
+        billImage.image = UIImage(named: "ThisisBill")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
