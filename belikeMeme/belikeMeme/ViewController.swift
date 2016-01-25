@@ -27,8 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var billImage: UIImageView!
     
     @IBOutlet weak var toolBar: UIToolbar!
-    @IBAction func changeImage(sender: AnyObject) {
-    }
+    
     
     
     override func viewWillAppear(animated: Bool) {
