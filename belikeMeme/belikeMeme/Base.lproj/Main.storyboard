@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="jUU-dD-ref">
+            <objects>
+                <viewController id="PTk-8j-WVb" customClass="ViewController" customModule="meme4ever" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dOs-79-e4P"/>
+                        <viewControllerLayoutGuide type="bottom" id="RC7-RP-fJJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PoL-YM-jBK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Oo-Mp-61T">
+                                <rect key="frame" x="20" y="556" width="560" height="44"/>
+                                <items>
+                                    <barButtonItem title="Textbox" id="qKb-sB-33v" userLabel="Add TextBox">
+                                        <connections>
+                                            <action selector="imagePickController:" destination="PTk-8j-WVb" id="e7P-BV-aSR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="pK6-Rf-tEE"/>
+                                    <barButtonItem title="Image" id="efx-JM-iCP" userLabel="Change Bill">
+                                        <connections>
+                                            <action selector="cameraController:" destination="PTk-8j-WVb" id="LXN-lP-Rm9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ThisisBill" translatesAutoresizingMaskIntoConstraints="NO" id="PK3-M8-waW">
+                                <rect key="frame" x="323" y="64" width="257" height="492"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-vL-JaL">
+                                <rect key="frame" x="20" y="20" width="560" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="2km-PV-rXB">
+                                        <connections>
+                                            <action selector="shareAction:" destination="PTk-8j-WVb" id="x4J-oX-Vy6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Y8-iKW">
+                                <rect key="frame" x="50" y="64" width="135" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4hD-Y8-iKW" secondAttribute="height" multiplier="61:18" id="RjV-tP-pho"/>
+                                    <constraint firstAttribute="height" constant="40" id="q5c-22-uRK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wro-kv-XvK">
+                                <rect key="frame" x="50" y="516" width="135" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wro-kv-XvK" secondAttribute="height" multiplier="61:18" id="FLA-ft-FcZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="QB4-E9-54A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click Image to change Image" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-L6-7ft">
+                                <rect key="frame" x="334" y="446" width="221" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click Textbox below to add your text here " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAq-MU-wT4">
+                                <rect key="frame" x="73" y="264" width="274" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vKg-vL-JaL" firstAttribute="top" secondItem="PoL-YM-jBK" secondAttribute="topMargin" constant="20" id="3jo-ON-g00"/>
+                            <constraint firstItem="vKg-vL-JaL" firstAttribute="leading" secondItem="PoL-YM-jBK" secondAttribute="leadingMargin" id="591-00-EuH"/>
+                            <constraint firstItem="4hD-Y8-iKW" firstAttribute="top" secondItem="vKg-vL-JaL" secondAttribute="bottom" id="69P-bj-dWh"/>
+                            <constraint firstItem="3Oo-Mp-61T" firstAttribute="top" secondItem="PK3-M8-waW" secondAttribute="bottom" id="7WE-fK-J2z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PK3-M8-waW" secondAttribute="trailing" id="Axm-rU-Ajq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4hD-Y8-iKW" secondAttribute="leading" constant="-30" id="CY9-kQ-aqu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKg-vL-JaL" secondAttribute="trailing" id="Iya-qg-o8b"/>
+                            <constraint firstItem="RC7-RP-fJJ" firstAttribute="top" secondItem="3Oo-Mp-61T" secondAttribute="bottom" id="Z37-Uk-5hn"/>
+                            <constraint firstItem="Wro-kv-XvK" firstAttribute="bottom" secondItem="PK3-M8-waW" secondAttribute="bottom" id="af7-y3-jUQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Oo-Mp-61T" secondAttribute="trailing" id="hZ2-Dp-Xvx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Wro-kv-XvK" secondAttribute="leading" id="jNV-Pu-Lq5"/>
+                            <constraint firstItem="PK3-M8-waW" firstAttribute="top" secondItem="vKg-vL-JaL" secondAttribute="bottom" id="jdz-z7-KOM"/>
+                            <constraint firstItem="PK3-M8-waW" firstAttribute="centerX" secondItem="PoL-YM-jBK" secondAttribute="centerX" id="kqJ-Qd-nwV"/>
+                            <constraint firstItem="3Oo-Mp-61T" firstAttribute="leading" secondItem="PoL-YM-jBK" secondAttribute="leadingMargin" id="ldZ-Dg-YQ7"/>
+                            <constraint firstItem="Wro-kv-XvK" firstAttribute="leading" secondItem="PoL-YM-jBK" secondAttribute="leadingMargin" constant="30" id="w7j-5V-YIi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomText" destination="Wro-kv-XvK" id="foL-tW-VBk"/>
+                        <outlet property="cameraAvailable" destination="efx-JM-iCP" id="NYn-Tq-6hP"/>
+                        <outlet property="imageView" destination="PK3-M8-waW" id="Nff-m0-ILI"/>
+                        <outlet property="toolBar" destination="3Oo-Mp-61T" id="23u-tO-6zw"/>
+                        <outlet property="topText" destination="4hD-Y8-iKW" id="9ta-3f-fRd"/>
+                        <outlet property="topToolBar" destination="vKg-vL-JaL" id="ucI-pd-WPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JS0-wo-uvG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ThisisBill" width="207" height="421"/>
+    </resources>
+</document>
