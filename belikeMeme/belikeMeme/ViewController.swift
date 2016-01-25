@@ -31,6 +31,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Subscribe to keyboard notifications
+        self.subscribeToKeyboardNotifications()
+        self.subscribeToKeyboardwilhideNotifications()
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         thisIsXText.text = "This is Bill"
@@ -43,8 +51,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unsubscribeFromKeyboardNotifications()
+        self.unsubscribeFromKeyboardwillhideNotifications()
+        
+    }
+    
+    @IBAction func shareAction(sender: UIBarButtonItem) {
+        
+            let saveMemeImage = generateMemedImage()
+            let activityVC = UIActivityViewController(activityItems: [saveMemeImage], applicationActivities: nil)
+            activityVC.completionWithItemsHandler = {
+                (s: String?, ok: Bool, items: [AnyObject]?, err:NSError?) -> Void in self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            
+            presentViewController(activityVC, animated: true, completion: nil)
+        
+    }
+    
+
     
     //all functions necessary to input the Text Fields
     func textFieldDidBeginEditing(textField: UITextField) {

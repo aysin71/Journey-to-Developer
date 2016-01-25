@@ -28,7 +28,11 @@
                                     <constraint firstAttribute="width" secondItem="Xmd-vA-3Bb" secondAttribute="height" multiplier="285:22" id="kve-0U-8do"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="action" id="aQL-jY-Yey"/>
+                                    <barButtonItem systemItem="action" id="aQL-jY-Yey">
+                                        <connections>
+                                            <action selector="shareAction:" destination="6Vw-0J-tak" id="564-hE-e6a"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xyz-4P-y7L"/>
                                 </items>
                             </toolbar>
