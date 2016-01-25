@@ -12,16 +12,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var thisIsXText: UILabel!
+    @IBOutlet weak var thisIsXText: UITextField!
+   
+    @IBOutlet weak var wiseText: UITextView!
+
+    @IBOutlet weak var beText: UITextField!
     
-    @IBOutlet weak var wiseText: UILabel!
-    
-    @IBOutlet weak var beText: UILabel!
-    
-    @IBOutlet weak var beLikeXText: UILabel!
+    @IBOutlet weak var beLikeXText: UITextField!
     
     @IBOutlet weak var billImage: UIImageView!
-
     
     @IBAction func changeImage(sender: AnyObject) {
     }
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         thisIsXText.text = "This is Bill"
-        wiseText.text = "add your text here. Click on any text to change it."
+        wiseText.text = "Add your text here.\nClick on any text to change it."
         beText.text = "Be Smart"
         beLikeXText.text = "Be like Bill"
         billImage.image = UIImage(named: "ThisisBill")
