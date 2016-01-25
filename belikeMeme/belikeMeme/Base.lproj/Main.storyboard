@@ -30,11 +30,6 @@
                                 <items>
                                     <barButtonItem systemItem="action" id="aQL-jY-Yey"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xyz-4P-y7L"/>
-                                    <barButtonItem title="Image" id="3s0-QS-XqA">
-                                        <connections>
-                                            <action selector="changeImage:" destination="6Vw-0J-tak" id="32p-Of-e1X"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="This is Bill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-UB-ULe">
@@ -74,6 +69,7 @@
                         <outlet property="beText" destination="O8S-0R-Do8" id="JUW-3C-OqC"/>
                         <outlet property="billImage" destination="h39-mU-xzE" id="pLm-2g-ALl"/>
                         <outlet property="thisIsXText" destination="nSk-UB-ULe" id="Q7l-dG-T2J"/>
+                        <outlet property="toolBar" destination="Xmd-vA-3Bb" id="KnJ-bh-hxW"/>
                         <outlet property="wiseText" destination="WKe-zr-HRx" id="f5A-Nj-zYl"/>
                     </connections>
                 </viewController>

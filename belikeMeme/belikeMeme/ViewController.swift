@@ -10,7 +10,11 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+    
+    var memes: [BillMeme] {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    }
     
     @IBOutlet weak var thisIsXText: UITextField!
    
@@ -22,6 +26,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var billImage: UIImageView!
     
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBAction func changeImage(sender: AnyObject) {
     }
     
@@ -40,7 +45,96 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //all functions necessary to input the Text Fields
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    
+    //all functions necessary to move the view up & down for the Bottom Text Field
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if beLikeXText.editing {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+        else {
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if beLikeXText.editing {
+            self.view.frame.origin.y += setKeyboardHeight(notification)
+        }
+        else {
+        }
+    }
+    
+    func subscribeToKeyboardwilhideNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:"    , name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.CGRectValue().height
+    }
+    
+    func setKeyboardHeight(notification: NSNotification) -> CGFloat {
+        
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.CGRectValue().height
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self,name: UIKeyboardWillShowNotification,object: nil)
+    }
+    
+    func unsubscribeFromKeyboardwillhideNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:
+            UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    //all functions necessary to create a memeImage and save it with the related fields
+    
+    func save() {
+        let meme = BillMeme(thisIsXText: thisIsXText!.text!  , wiseText: wiseText!.text! , beText: beText.text!, beLikeXText: beLikeXText.text!, billImage: billImage.image!, memedImage: generateMemedImage())
+        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        toolBar.hidden = true
+        
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        toolBar.hidden = false
+        
+        return memedImage
+    }
+    
+
 
 
 }
+
+
 
